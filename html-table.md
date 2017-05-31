@@ -115,6 +115,7 @@
 </table>
 
 * `<colgroup>`
+```html
 <table>
   <colgroup>
   <!-- just style it here -->
@@ -134,9 +135,11 @@
     <td>Jazz</td>
   </tr>
 </table>
+```
+<img alt="colgroup" widht="320" src="./resources/colgroup.png">
 
 ---
 
 [一个稍微复杂点儿的例子](https://github.com/mdn/learning-area/blob/master/html/tables/basic/timetable-fixed.html)
 
-![school timetable](./resources/school-timetable.png)
+<img alt="school timetable" widht="600" src="./resources/school-timetable.png">
