@@ -136,10 +136,10 @@
   </tr>
 </table>
 ```
-<img alt="colgroup" widht="240" src="./resources/colgroup.png">
+<img alt="colgroup" width="320" src="./resources/colgroup.png">
 
 ---
 
 [一个稍微复杂点儿的例子](https://github.com/mdn/learning-area/blob/master/html/tables/basic/timetable-fixed.html)
 
-<img alt="school timetable" widht="480" src="./resources/school-timetable.png">
+<img alt="school timetable" width="640" src="./resources/school-timetable.png">
