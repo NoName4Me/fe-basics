@@ -2,6 +2,7 @@
 >*写在前面的话，私以为一个需要各种`hack`来解决问题的语言（或工具），本身就是有问题的，我们应该尽可能的按照这个语言的规范来使用它，而不是随意使用，然后把诸多精力放在因为自己的随意而引发的`bug`解决上。*
 
 # table
+## basic table
 * 不利于视障者网站
 * 使用表格来布局会更加复杂，不易维护。
 * `<header>,<section>,<article>,<div>`默认宽度填满父容器，而表格默认宽度依赖于内容，所以为了在不同的设备上有效显示，需要额外的计算。
@@ -143,3 +144,7 @@
 [一个稍微复杂点儿的例子](https://github.com/mdn/learning-area/blob/master/html/tables/basic/timetable-fixed.html)
 
 <img alt="school timetable" width="640" src="./resources/school-timetable.png">
+
+
+## advanced table
+`<thead>,<tbody>,<tfoot>,<caption>`
