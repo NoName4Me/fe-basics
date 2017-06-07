@@ -16,9 +16,28 @@
 
 
 
-### [伪类和伪元素选择器]()
+### [伪类和伪元素选择器](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Pseudo-classes_and_pseudo-elements)
 
-### [组合选择器]()
+* `:xx`伪类（比如`:first`）
+* `::xxx`伪元素（比如`::before`）
+```html
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/CSS">CSS</a> defined in the MDN glossary.</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML">HTML</a> defined in the MDN glossary.</li>
+</ul>
+```
+```css
+[href^=http]::after {
+  content: '⤴';
+}
+```
+
+### [组合选择器](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Combinators_and_multiple_selectors)
+*注：以下A、B可以是其它选择器的组合。*
+* `A, B`：多选
+* `A B`：层级
+* `A > B`：直接层级
+* `A + B`、`A ~ B`：直接同级、同级
 
 ---
 >_TBD_
