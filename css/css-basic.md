@@ -1,7 +1,7 @@
 # CSS
 
 ## how css works
-<img width="640" src="../resources/rendering.svg">
+<img width="640" src="../resources/rendering.png">
 
 ## 选择器
 ### [简单选择器](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Simple_selectors)
@@ -56,7 +56,7 @@
 
 像字体`font-family`（字形、颜色、字号）这种不怎么变动的属性一般都会默认继承。
 
-也可以强制让某个样式继承，比如`a { color: red; }`
+也可以强制让某个样式继承，比如`a { color: inherit; }`
 
 ---
 >_TBD_
