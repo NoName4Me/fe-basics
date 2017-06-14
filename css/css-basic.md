@@ -58,6 +58,15 @@
 
 也可以强制让某个样式继承，比如`a { color: inherit; }`
 
+## 盒模型
+`overflow: hidden | visible | auto`依次为隐藏／显示／滚动
+
+`background-clip: border-box | padding-box | content-box`，背景裁剪依次为border边缘／padding边缘／内容边缘，参考[jsfiddle](https://jsfiddle.net/api/mdn/)。
+
+`inline | block | inline-block`，直接看例子：[fiddle](https://jsfiddle.net/twuuttfm/1/)。
+
+<img width="480" alt="inline/block/inline-block" src="../resources/inline-block.png">
+
 ---
 >_TBD_
 ## font
