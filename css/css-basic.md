@@ -1,14 +1,16 @@
 # CSS
+>* [MDN CSS Refrence](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
 
-## how css works
+
+## 0. how css works
 <img width="640" src="../resources/rendering.png">
 
-## 选择器
-### [简单选择器](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Simple_selectors)
+## 1. 选择器
+### 1.1 [简单选择器](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Simple_selectors)
 * 元素名、类、ID、*
 * 组合（`( space)`子、`>`直接子类、`+`临近同级、`~`同级）
 
-### [属性选择器](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Attribute_selectors)
+### 1.2 [属性选择器](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Attribute_selectors)
 
 * `[key]`、`[key=val]`、`[key~=val]`（空格间隔valList）
 
@@ -16,7 +18,7 @@
 
 
 
-### [伪类和伪元素选择器](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Pseudo-classes_and_pseudo-elements)
+### 1.3 [伪类和伪元素选择器](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Pseudo-classes_and_pseudo-elements)
 
 * `:xx`伪类（比如`:first`）
 * `::xxx`伪元素（比如`::before`）
@@ -32,14 +34,14 @@
 }
 ```
 
-### [组合选择器](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Combinators_and_multiple_selectors)
+### 1.4 [组合选择器](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Combinators_and_multiple_selectors)
 *注：以下A、B可以是其它选择器的组合。*
 * `A, B`：多选
 * `A B`：层级
 * `A > B`：直接层级
 * `A + B`、`A ~ B`：直接同级、同级
 
-## 值
+## 2. 值
 * 绝对值
 
 `px/%`
@@ -52,13 +54,13 @@
 
 `vh/vw`：1/100 viewport的高／宽
 
-## 层叠和继承
+## 3. 层叠和继承
 
 像字体`font-family`（字形、颜色、字号）这种不怎么变动的属性一般都会默认继承。
 
 也可以强制让某个样式继承，比如`a { color: inherit; }`
 
-## 盒模型
+## 4. 盒模型
 `overflow: hidden | visible | auto`依次为隐藏／显示／滚动
 
 `background-clip: border-box | padding-box | content-box`，背景裁剪依次为border边缘／padding边缘／内容边缘，参考[jsfiddle](https://jsfiddle.net/api/mdn/)。
@@ -67,11 +69,20 @@
 
 <img width="480" alt="inline/block/inline-block" src="../resources/inline-block.png">
 
+## Style Text
+
+### List
+list-style
+
 ---
 >_TBD_
 ## font
 
 >[Web Safe Fonts](http://www.cssfontstack.com/)
+
+`text-transform: none | uppercase | lowercase | capitalized | full-width`
+
+`text-shadow`
 
 ### at-rules
 
