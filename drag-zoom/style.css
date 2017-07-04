@@ -1,0 +1,43 @@
+.container {
+    width: 480px;
+    height: 480px;
+    overflow: hidden;
+    background-color: #efefef;
+    margin: 0 auto;
+    cursor: move;
+    position: relative;
+}
+
+.tools {
+    position: absolute;
+    z-index: 100;
+    top: 20px;
+    left: 20px;
+}
+.tools > button {
+    box-shadow: 2px 4px 2px 1px rgba(0, 0, 0, .4);
+}
+
+#canvas {
+    width: 2000px;
+    height: 2000px;
+    transition: all .5s ease-out;
+}
+
+.element {
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    background-color: pink;
+    cursor: grab;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    text-align: center;
+    line-height: 60px;
+}
+
+.element:focus {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+}
