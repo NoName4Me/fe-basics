@@ -6,37 +6,41 @@
     margin: 0 auto;
     cursor: move;
     position: relative;
+    overflow: scroll;
 }
 
 .tools {
-    position: absolute;
+    position: fixed;
     z-index: 100;
-    top: 20px;
-    left: 20px;
+    top: 10px;
+    left: 50%;
 }
 .tools > button {
     box-shadow: 2px 4px 2px 1px rgba(0, 0, 0, .4);
 }
 
 #canvas {
-    width: 2000px;
-    height: 2000px;
+    width: 800px;
+    height: 600px;
     transition: all .5s ease-out;
+    position: relative;
 }
 
 .element {
     width: 60px;
     height: 60px;
-    margin: 10px;
     background-color: pink;
     cursor: grab;
     cursor: -webkit-grab;
     cursor: -moz-grab;
     text-align: center;
     line-height: 60px;
+    position: absolute;
+    left: 80px;
+    top: 40px;
 }
 
-.element:focus {
+.element:active {
     cursor: grabbing;
     cursor: -webkit-grabbing;
     cursor: -moz-grabbing;
