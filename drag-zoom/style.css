@@ -1,18 +1,27 @@
 .container {
-    width: 480px;
-    height: 480px;
-    overflow: hidden;
+    left:0;
+    top:0;
+    right: -18px;
+    bottom: -18px;
+    position: absolute;
+    overflow: scroll;
+}
+
+.container-no-scroll-bar {
+    width: 600px;
+    height: 400px;
     background-color: #efefef;
-    margin: 0 auto;
+    margin: 20px auto;
     cursor: move;
     position: relative;
-    overflow: scroll;
+    overflow: hidden;
+    
 }
 
 .tools {
     position: fixed;
     z-index: 100;
-    top: 10px;
+    top: 30px;
     left: 50%;
 }
 .tools > button {
@@ -20,28 +29,24 @@
 }
 
 #canvas {
-    width: 800px;
-    height: 600px;
-    transition: all .5s ease-out;
+    width: 2000px;
+    height: 2000px;
+    transition: all .5s ease-in-out;
     position: relative;
+    background-color: lightyellow;
+    transform-origin: 1000px 1000px;
+    left: calc(50% - 1000px);
+    top: calc(50% - 1000px);
 }
 
 .element {
-    width: 60px;
-    height: 60px;
+    width: 160px;
+    height: 160px;
     background-color: pink;
     cursor: grab;
     cursor: -webkit-grab;
     cursor: -moz-grab;
-    text-align: center;
-    line-height: 60px;
     position: absolute;
-    left: 80px;
-    top: 40px;
-}
-
-.element:active {
-    cursor: grabbing;
-    cursor: -webkit-grabbing;
-    cursor: -moz-grabbing;
+    left: 1000px;
+    top: 1000px;
 }
