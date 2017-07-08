@@ -1,10 +1,12 @@
 var canvas = document.querySelector("#canvas");
 var container = document.querySelector(".container");
-
+var marker = document.querySelector("#marker");
 var elements = document.querySelectorAll("#canvas > div");
 var elementMouseDown = false;
 var elementOffset = {};
 var currentEvent = {};
+document.onmouseup = mouseUp;
+document.onmousemove = mouseMove;
 function stopEvent(e) {
     if (e.stopPropagation) {
         e.stopPropagation();
@@ -13,7 +15,6 @@ function stopEvent(e) {
     }
     e.preventDefault();
     //e.returnValue = false;
-
 }
 
 var dragOffset = {};
@@ -26,8 +27,8 @@ function mouseDown(e) {
         dragOffset.start.x = e.x;
         dragOffset.start.y = e.y;
     } else {
-        elementOffset.x = e.x - e.target.offsetLeft;
-        elementOffset.y = e.y - e.target.offsetTop;
+        elementOffset.x = e.x / scaleFactor - e.target.offsetLeft;
+        elementOffset.y = e.y / scaleFactor - e.target.offsetTop;
         currentEvent.target = e.target;
     }
     stopEvent(e);
@@ -37,22 +38,22 @@ function mouseMove(e) {
     if (!isMouseDown) {
         return;
     }
+    console.log("L: " + e.x + ", R: " + e.y);
     if (currentEvent.target.id == "canvas") {
-        dragOffset.stop = {};
-        dragOffset.stop.x = e.x;
-        dragOffset.stop.y = e.y;
-        var oX = dragOffset.stop.x - dragOffset.start.x;
-        var oY = dragOffset.stop.y - dragOffset.start.y;
-
-        container.scrollLeft -= oX;
-        container.scrollTop -= oY;
+        var oX = e.x - dragOffset.start.x;
+        var oY = e.y - dragOffset.start.y;
+        dragOffset.start = {};
+        dragOffset.start.x = e.x;
+        dragOffset.start.y = e.y;
+        container.scrollLeft = container.scrollLeft - oX;
+        container.scrollTop = container.scrollTop - oY;
     } else {
-        var width = canvas.offsetWidth - 60;
-        var height = canvas.offsetHeight - 60;
+        var width = canvas.offsetWidth - 160;
+        var height = canvas.offsetHeight - 160;
 
-        var x = e.x - elementOffset.x;
+        var x = e.x / scaleFactor - elementOffset.x;
         x = Math.min(Math.max(0, x), width);
-        var y = e.y - elementOffset.y;
+        var y = e.y / scaleFactor - elementOffset.y;
         y = Math.min(Math.max(0, y), height);
 
         currentEvent.target.style.left = x + 'px';
@@ -65,15 +66,23 @@ function mouseUp(e) {
     isMouseDown = false;
 }
 
-function zoomIn() {
-
+var scaleFactor = 1;
+function noZoom() {
+    scaleFactor = 1;
+    doZoom();
 }
-
-
 function zoomOut() {
-    canvas.style.transform = "scale(2)"
+    doZoom(scaleFactor - 0.3);
 }
 
 function zoomIn() {
-    canvas.style.transform = "scale(.5)";
+    doZoom(scaleFactor + 0.3);
+}
+function doZoom(tempSF) {
+    if (tempSF < 0.3 || tempSF > 1.6) {
+        alert("已经达到最" + (scaleFactor > 1 ? "大" : "小"));
+        return;
+    }
+    scaleFactor = tempSF;
+    canvas.style.transform = "scale(" + scaleFactor + ")";
 }
