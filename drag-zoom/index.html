@@ -10,17 +10,18 @@
 </head>
 
 <body>
-
+    <div class="container-no-scroll-bar">
     <div class="container">
         <div class="tools">
             <button onclick="zoomIn()">Zoom In</button>
             <button onclick="zoomOut()">Zoom Out</button>
         </div>
-        <div id="canvas" onMouseDown="mouseDown(event)" onMouseUp="mouseUp(event)" onMouseMove="mouseMove(event)">
-            <div onMouseDown="mouseDown(event)" onMouseUp="mouseUp(event)" onMouseMove="mouseMove(event)" class="element">DIV-1</div>
-            <div onMouseDown="mouseDown(event)" onMouseUp="mouseUp(event)" onMouseMove="mouseMove(event)" class="element">DIV-2</div>
-            <div onMouseDown="mouseDown(event)" onMouseUp="mouseUp(event)" onMouseMove="mouseMove(event)" class="element">DIV-3</div>
+        <div id="canvas" onMouseDown="mouseDown(event)">
+            <div onMouseDown="mouseDown(event)" class="element" id="marker">L<br>T</div>
+            <!--<div onMouseDown="mouseDown(event)" onMouseUp="mouseUp(event)" onMouseMove="mouseMove(event)" class="element">DIV-2</div>
+            <div onMouseDown="mouseDown(event)" onMouseUp="mouseUp(event)" onMouseMove="mouseMove(event)" class="element">DIV-3</div>-->
         </div>
+    </div>
     </div>
     <script src="main.js"></script>
 </body>
