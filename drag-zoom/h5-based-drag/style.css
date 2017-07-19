@@ -1,0 +1,52 @@
+.container {
+    left:0;
+    top:0;
+    right: -18px;
+    bottom: -18px;
+    position: absolute;
+    overflow: scroll;
+}
+
+.container-no-scroll-bar {
+    width: 600px;
+    height: 400px;
+    background-color: #efefef;
+    margin: 20px auto;
+    cursor: move;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.tools {
+    position: fixed;
+    z-index: 100;
+    top: 30px;
+    left: 50%;
+}
+.tools > button {
+    box-shadow: 2px 4px 2px 1px rgba(0, 0, 0, .4);
+}
+
+#canvas {
+    width: 2000px;
+    height: 2000px;
+    transition: all .5s ease-in-out;
+    position: relative;
+    background-color: lightyellow;
+    transform-origin: 1000px 1000px;
+    left: calc(50% - 1000px);
+    top: calc(50% - 1000px);
+}
+
+.element {
+    width: 160px;
+    height: 160px;
+    background-color: pink;
+    cursor: grab;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    position: absolute;
+    left: 1000px;
+    top: 1000px;
+}
