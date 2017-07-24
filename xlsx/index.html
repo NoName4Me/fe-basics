@@ -12,15 +12,18 @@
             background-color: #512da8;
         }
 
+        body>div {
+            text-align: center;
+            margin: 100px auto;
+        }
+
         .container {
             width: 480px;
             height: 320px;
-            margin: 80px auto;
             padding: 10px;
             border-radius: 8px;
             box-shadow: 4px 4px 12px 4px rgba(0, 0, 0, .4);
             background-color: #ff4081;
-            text-align: center;
             transition: all .4s ease-out;
         }
 
@@ -29,18 +32,45 @@
             background-color: #ff3071;
         }
 
-        .author {
-            text-align: center;
-            margin: 80px auto;
-        }
         a {
             color: #fff;
             font-size: 1.5em;
             text-decoration: none;
         }
+
         a:hover {
             color: #ff4081;
             text-decoration: underline;
+        }
+
+        input {
+            display: none;
+        }
+
+        .btn-container {
+            margin-top: 20px;
+            text-align: left;
+
+        }
+
+        .fake-input {
+            cursor: pointer;
+            width: 180px;
+            height: 32px;
+            line-height: 32px;
+            font-size: 24px;
+            padding: 4px 8px;
+            box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, .2);
+            border-radius: 4px;
+            background-color: #fff;
+            color:#666;
+        }
+        .fake-input:hover {
+            box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, .1);
+            color: #333;
+        }
+        .fake-input:active{
+            box-shadow: -1px -1px 1px 2px rgba(0, 0, 0, .1);
         }
     </style>
 </head>
@@ -48,7 +78,15 @@
 <body>
     <div class="container">
         <h1>Maybe... Choose A File First?</h1>
-        <input id="srcFile" type="file">
+        <div class="btn-container">
+            <label class="fake-input">data file(.xlsx | .xls)</label>
+            <input id="srcFile" type="file" accept=".xlsx, .xls">
+        </div>
+        <div class="btn-container">
+            <label class="fake-input">template file(.js | .txt | other common text file)</label>
+            <input id="templateFile" type="file" accept=".xlsx, .xls">
+        </div>
+        <button id="ok" onclick="ok()">Let's Rock!</button>
     </div>
     <div class="author">
         <a href="mailto:iamkidding@88.cu?subject=Seriously，I am kidding.">__by Jonge</a>
