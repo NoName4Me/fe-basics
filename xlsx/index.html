@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        body {
+            color: #fff;
+            background-color: #512da8;
+        }
+        .container {
+            width: 480px;
+            height: 320px;
+            margin: 80px auto;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 4px 4px 8px 6px rgba(0,0,0,.4);
+            background-color: #ff4081;
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
-    <input id="srcFile" type="file">
+    <div class="container">
+        <h1>Maybe... Choose A File First?</h1>
+        <input id="srcFile" type="file">
+    </div>
+
     <script lang="javascript" src="lib/xlsx.full.min.js"></script>
     <script src="main.js"></script>
 </body>
+
 </html>

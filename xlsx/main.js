@@ -16,18 +16,15 @@ document.querySelector("#srcFile").onchange = function(event) {
                     if (workbook.Sheets.hasOwnProperty(sheet)) {
                         fromTo = workbook.Sheets[sheet]['!ref'];
                         console.log(fromTo);
-                        console.log(XLSX.utils.sheet_to_json(workbook.Sheets[sheet]));
+                        var allData = XLSX.utils.sheet_to_json(workbook.Sheets[sheet]);
                         break; // 如果只取第一张表，就取消注释这行
                     }
                 }
         } catch (error) {
-            console.log('文件类型不正确');
+            console.error(error);
             return;
         }
 
     };
-
     reader.readAsBinaryString(file);
-
-
 }
