@@ -2,7 +2,7 @@
   "name": "js-file-io",
   "version": "1.0.0",
   "description": "read from xlsx, write to plain text (key-value) file.",
-  "main": "main.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
