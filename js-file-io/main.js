@@ -7,7 +7,10 @@ document.querySelector("#srcFile").onchange = function(event) {
         // The file's text will be printed here
         //console.log(re)
         srcData = re.target.result;
-        $http.post("./send", {type:'src', data: srcData})
+        $http.post("./send", JSON.stringify({
+                type: 'src',
+                data: srcData
+            }))
             .then(JSON.parse)
             .then((r) => {
                 console.log(r);
@@ -60,13 +63,13 @@ var $http = {
                 reject(new Error("Network error"));
             };
 
-            req.send();
+            req.send(data);
         });
     },
     get: function(url) {
         return $http.basic(url, 'GET');
     },
     post: function(url, data) {
-        return $http.basic(url, 'POST', data);
+        return $http.basic(url, 'POST', undefined, data);
     }
 };

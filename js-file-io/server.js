@@ -2,6 +2,7 @@ const http = require("http");
 const fs = require('fs');
 const url = require('url');
 const XLSX = require('xlsx');
+const qs = require('querystring');
 
 exports.start = function() {
     http.createServer(function(request, response) {
@@ -9,8 +10,8 @@ exports.start = function() {
             var pathname = url.parse(request.url).pathname;
             var ext = pathname.match(/(\.[^.]+|)$/)[0];
             if (['.css', '.html', '.js', '.png'].indexOf(ext) < 0) {
-                response.writeHead(200, {
-                    "Content-Type": "text/plain"
+                response.writeHead(400, {
+                    "Content-Type": "application/json"
                 });
                 response.write(JSON.stringify({
                     errorCode: 1001,
@@ -20,17 +21,23 @@ exports.start = function() {
             } else {
                 fs.readFile("." + request.url, ext === '.png' ? null : 'utf-8', function(err, data) {
                     if (err) {
-                        throw err;
-                    };
-                    response.writeHead(200, {
-                        "Content-Type": {
-                            ".css": "text/css",
-                            ".js": "application/javascript",
-                            ".html": "text/html",
-                            ".png": "image/png"
-                        }[ext]
-                    });
-                    response.write(data);
+                        console.error(err);
+                        response.write(JSON.stringify({
+                            errorCode: 5001,
+                            msg: "inner error!"
+                        }));
+                    } else {
+                        response.writeHead(200, {
+                            "Content-Type": {
+                                ".css": "text/css",
+                                ".js": "application/javascript",
+                                ".html": "text/html",
+                                ".png": "image/png"
+                            }[ext]
+                        });
+                        response.write(data);
+                    }
+
                     response.end();
                 });
             }
@@ -42,30 +49,37 @@ exports.start = function() {
             }).on('data', (chunk) => {
                 body.push(chunk);
             }).on('end', () => {
-                body = Buffer.concat(body).toString();
-                // At this point, we have the headers, method, url and body, and can now
-                // do whatever we need to in order to respond to this request.
-                try {
-                    var workbook = XLSX.read(JSON.parse(body).data, {
-                        type: 'binary'
-                    });
-                    var fromTo = '';
+                // body = qs.parse(body);
+                body = JSON.parse(Buffer.concat(body).toString());
 
-                    for (var sheet in workbook.Sheets) {
-                        if (workbook.Sheets.hasOwnProperty(sheet)) {
-                            fromTo = workbook.Sheets[sheet]['!ref'];
-                            console.log(fromTo);
-                            var allData = XLSX.utils.sheet_to_json(workbook.Sheets[sheet]);
-                            break; // 如果只取第一张表，就取消注释这行
+                var reponseData = {
+                    errorCode: 0,
+                    msg: "convert ok."
+                };
+                //read src data file
+                if (body.type === "src") {
+                    try {
+                        var workbook = XLSX.read(body.data, {
+                            type: 'binary'
+                        });
+                        var fromTo = '';
+
+                        for (var sheet in workbook.Sheets) {
+                            if (workbook.Sheets.hasOwnProperty(sheet)) {
+                                //fromTo = workbook.Sheets[sheet]['!ref'];
+                                var allData = XLSX.utils.sheet_to_json(workbook.Sheets[sheet]);
+                                console.log(allData);
+                                break; // 如果只取第一张表，就取消注释这行
+                            }
                         }
+                    } catch (error) {
+                        console.error(error);
+                        return;
                     }
-                } catch (error) {
-                    console.error(error);
-                    return;
                 }
+                response.write(JSON.stringify(reponseData));
+                response.end();
             });
         }
-
-
     }).listen(8888);
 };
