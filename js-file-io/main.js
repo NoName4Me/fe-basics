@@ -22,6 +22,30 @@ document.querySelector("#srcFile").onchange = function(event) {
     reader.readAsBinaryString(file);
 }
 
+document.querySelector("#templateFile").onchange = function(event) {
+    //console.log(event);
+    var file = event.target.files[0];
+    var reader = new FileReader();
+    reader.onload = function(re) {
+        // The file's text will be printed here
+        //console.log(re)
+        srcData = re.target.result;
+        console.log(srcData)
+        $http.post("./send", JSON.stringify({
+                type: 'template',
+                data: srcData
+            }))
+            .then(JSON.parse)
+            .then((r) => {
+                console.log(r);
+            })
+            .catch(function(error) {
+                console.error(error);
+            });
+    };
+    reader.readAsText(file, 'utf-8');
+}
+
 function ok() {
     if (!srcData || !templateData) {
         alert("check your " + (srcData ? "template" : (templateData ? "data" : "data and template") + " file!"));

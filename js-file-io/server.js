@@ -50,7 +50,7 @@ exports.start = function() {
                 body.push(chunk);
             }).on('end', () => {
                 // body = qs.parse(body);
-                body = JSON.parse(Buffer.concat(body).toString());
+                body = JSON.parse(Buffer.concat(body).toString('utf-8'));
 
                 var reponseData = {
                     errorCode: 0,
@@ -76,6 +76,10 @@ exports.start = function() {
                         console.error(error);
                         return;
                     }
+                } else if (body.type = "template") {
+                    var content = body.data;
+                    var lines = content.split(/\r\n|\r|\n/);
+                    console.log(lines)
                 }
                 response.write(JSON.stringify(reponseData));
                 response.end();
