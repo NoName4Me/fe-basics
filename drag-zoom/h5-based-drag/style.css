@@ -29,24 +29,31 @@
 }
 
 #canvas {
-    width: 2000px;
-    height: 2000px;
+    width: 600px;
+    height: 400px;
     transition: all .5s ease-in-out;
     position: relative;
     background-color: lightyellow;
-    transform-origin: 1000px 1000px;
-    left: calc(50% - 1000px);
-    top: calc(50% - 1000px);
 }
 
-.element {
-    width: 160px;
-    height: 160px;
+.src {
+    width: 60px;
+    height: 60px;
     background-color: pink;
     cursor: grab;
     cursor: -webkit-grab;
     cursor: -moz-grab;
-    position: absolute;
-    left: 1000px;
-    top: 1000px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.dest {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    background-color: lightblue;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
 }

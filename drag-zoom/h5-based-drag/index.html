@@ -12,14 +12,13 @@
 <body>
     <div class="container-no-scroll-bar">
     <div class="container">
-        <div class="tools">
+        <div class="tools" style="display: none;">
             <button onclick="zoomIn()">Zoom In</button>
             <button onclick="zoomOut()">Zoom Out</button>
         </div>
-        <div id="canvas" onMouseDown="mouseDown(event)">
-            <div onMouseDown="mouseDown(event)" class="element" id="marker">L<br>T</div>
-            <!--<div onMouseDown="mouseDown(event)" onMouseUp="mouseUp(event)" onMouseMove="mouseMove(event)" class="element">DIV-2</div>
-            <div onMouseDown="mouseDown(event)" onMouseUp="mouseUp(event)" onMouseMove="mouseMove(event)" class="element">DIV-3</div>-->
+        <div id="canvas" ondrop="dropHandler(event);" ondragover="dragoverHandler(event);">
+            <div draggable="true" class="src" id="marker" ondragstart="dragstartHandler(event);">1</div>
+            <div  class="dest" id="target" >2</div>
         </div>
     </div>
     </div>
