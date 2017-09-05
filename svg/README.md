@@ -63,3 +63,30 @@ Scx,cy x,y: first control point is assumed to be the last used point
 ## Coordinate
 viewBox=minX,minY widht,height
 > this can do shift/scale
+
+preserveAspectRatio
+```js
+preserveAspectRatio="xMinyMin meet"
+// xMin - aligned to left, xMid - middle, xMax - aligned to bottom
+// yMin - top
+// meet: sliced untill the largest side touch the viewport boundary
+// slice: scaled and sliced untill the mallest side touch the viewport boundary
+```
+
+## Constructure
+
+* `<defs>` & `<g>`
+```html
+<defs>
+    <linearGradient id="gradient">
+      <stop offset="20%" stop-color="#3D9" />
+      <stop offset="90%" stop-color="#39F" />
+    </linearGradient>
+</defs>
+
+<!-- reference to the defined element -->
+<g>
+    <circle r="20" cx="50" cy="50" fill="url(#gradient)"></circle>
+</g>
+```
+
