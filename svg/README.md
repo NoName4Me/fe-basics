@@ -46,3 +46,20 @@ cordinate origin: (0,0) - left-top, x --> rigth, y V down
 **H**orizontal line to
 **V**ertical line to
 clo**Z**e path
+
+**A**rc
+> A rx,ry rotation big/small-arcFlag,clock-wise flag
+`A30,40 0 0,0 70,70`: this means draw a small couter-clock-wise arc(rx=30,ry=40) to (70,70)
+
+Bezier Curves
+**Q**uadratic Bezier Curves
+Qcx,cy x,y: cx,cy is control point, x,y is end point
+Tx,y: control point is last used control point
+
+**C**ubic Bezier Curves
+Ccx1,cy1 cx2,cy2 x,y: 2 control points
+Scx,cy x,y: first control point is assumed to be the last used point
+
+## Coordinate
+viewBox=minX,minY widht,height
+> this can do shift/scale
