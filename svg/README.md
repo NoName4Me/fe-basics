@@ -75,7 +75,7 @@ preserveAspectRatio="xMinyMin meet"
 
 ## Constructure
 
-* `<defs>` & `<g>`
+* `<defs>` & `<symbol>` 
 ```html
 <defs>
     <linearGradient id="gradient">
@@ -84,9 +84,36 @@ preserveAspectRatio="xMinyMin meet"
     </linearGradient>
 </defs>
 
+<symbol>
+    <linearGradient id="gradient">
+      <stop offset="20%" stop-color="#3D9" />
+      <stop offset="90%" stop-color="#39F" />
+    </linearGradient>
+</symbol>
+
 <!-- reference to the defined element -->
 <g>
     <circle r="20" cx="50" cy="50" fill="url(#gradient)"></circle>
 </g>
 ```
+
+* `<use>`
+
+
+* `<marker>`
+>you can use viewBox for scale/transform
+
+refX,refY: the offset of X-axis, Y-axis
+```html
+<defs>
+<!-- basic W|H * markerUnits assignedKey's Value-->
+    <marker markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth" id="arrow">
+        <path d="M0,0 L0,6 L9,3 Z" fill="#3A9"></path>
+    </marker>
+</defs>
+
+
+<path d="M100,10 C200,40 300,10 400,50"  stroke="#3DA" marker-end="url(#arrow)" fill="none" stroke-width="2"/>
+```
+`marker-end`, `marker-start`, `marker-end`(only display when polyline, path, polygon change direction)
 
