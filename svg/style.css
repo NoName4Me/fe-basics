@@ -1,0 +1,92 @@
+body,
+div {
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    position: absolute;
+    top: 50px;
+    bottom: 50px;
+    width: 100%;
+    display: flex;
+}
+
+.banner {
+    background-color: darkolivegreen;
+    text-align: center;
+    color: white;
+}
+
+header,
+footer {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    max-height: 50px;
+    min-height: 50px;
+    line-height: 50px;
+    z-index: 100;
+}
+
+header {
+    top: 0;
+    box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, .2);
+}
+
+footer {
+    bottom: 0;
+}
+
+.content>div {
+    height: 100%;
+    display: inline-block;
+}
+
+.left-panel {
+    flex: 0 0 240px;
+    padding: 20px 5px;
+    background-color: #f1f2f3;
+    box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, .2);
+    z-index: 1;
+}
+
+.right-panel {
+    flex: 2;
+    background: #fff;
+}
+
+ul,li {
+    list-style: none;
+}
+.source {
+    display: inline-block;
+    border: 1px solid #000;
+    border-radius: 16px;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    background-color: #fff;
+    color: darkcyan;
+    cursor: pointer;
+}
+.canvas-container{
+    height: 100%;
+}
+.ml10 {
+    margin-left: 10px;
+}
+.m10 {
+    margin: 10px;
+}
+
+.acher-hide {
+    stroke: none;
+    fill: none;
+}
+
+.acher {
+    stroke: none;
+    fill: none;
+}

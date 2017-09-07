@@ -61,7 +61,7 @@ Ccx1,cy1 cx2,cy2 x,y: 2 control points
 Scx,cy x,y: first control point is assumed to be the last used point
 
 ## Coordinate
-viewBox=minX,minY widht,height
+viewBox=minX,minY width,height
 > this can do shift/scale
 
 preserveAspectRatio
@@ -98,6 +98,9 @@ preserveAspectRatio="xMinyMin meet"
 ```
 
 * `<use>`
+```html
+<use x="0" y="0" xlink:href="#element" fill="#f00" stroke="orange" stroke-width="5px" />
+```
 
 
 * `<marker>`
