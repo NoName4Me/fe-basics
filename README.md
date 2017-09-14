@@ -8,6 +8,8 @@ HTML概览。
 ### 1.2 [about table](./html-table.md)
 表格相关。
 
+### 1.3 [svg](svg)
+
 ## 2. [css](./css/css-basic.md)
 
 
