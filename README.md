@@ -8,7 +8,9 @@ HTML概览。
 ### 1.2 [about table](./html-table.md)
 表格相关。
 
-### 1.3 [svg](svg)
+### 1.3 [svg](./svg)
+
+### 1.4 [drag & drop & zoom](./drag-zoom)
 
 ## 2. [css](./css/css-basic.md)
 
