@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *:hover{
+            position: relative;
+        }
+        *[data-title]:hover:after {
+            position: absolute;
+            padding: 10px;
+            top: 100%;
+            left: 0;
+            content: attr(data-title);
+            color: #666;
+            background-color: #fff;
+            z-index: 9999;
+            box-shadow: 0 0 12px 0 rgba(0,0,0,.3);
+            border-radius: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" data-title="hello, jonge~" placeholder="input something" />
+    <br>
+    <br>
+    <a href="#" data-title="link title">This is a fake link.</a>
+</body>
+
+</html>

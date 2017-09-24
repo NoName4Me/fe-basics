@@ -73,6 +73,8 @@ ul,li {
 }
 .canvas-container{
     height: 100%;
+    background-size: 14px 14px;
+    background-image: linear-gradient(to right, #efefef 1px, transparent 1px),linear-gradient(to bottom, #efefef 1px, transparent 1px)
 }
 .ml10 {
     margin-left: 10px;
@@ -81,12 +83,12 @@ ul,li {
     margin: 10px;
 }
 
-.acher-hide {
+.mouse-out .acher-hide {
     stroke: none;
     fill: none;
 }
 
 .acher {
-    stroke: none;
-    fill: none;
+    stroke: #399;
+    fill: #3DD;
 }

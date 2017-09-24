@@ -35,19 +35,19 @@
                         </marker>
                     </defs>
                     <defs>
-                        <g id="dataSource">
+                        <g id="dataSource" class="process mouse-out" onmouseover="processMouseOver(this)" onmouseleave="processMouseOut(this)">
                             <circle cx="0" cy="0" r="20" stroke="#39D" fill="#3A9"></circle>
-                            <circle class="acher" cx="0" cy="-20" r="8" stroke="#399" fill="#3DD"></circle>
+                            <circle class="acher-hide" cx="0" cy="-20" r="8" stroke="#399" fill="#3DD"></circle>
                             <circle class="acher" cx="20" cy="0" r="8" stroke="#399" fill="#3DD"></circle>
-                            <circle class="acher" cx="0" cy="20" r="8" stroke="#399" fill="#3DD"></circle>
-                            <circle class="acher" cx="-20" cy="0" r="8" stroke="#399" fill="#3DD"></circle>
+                            <circle class="acher-hide" cx="0" cy="20" r="8" stroke="#399" fill="#3DD"></circle>
+                            <circle class="acher-hide" cx="-20" cy="0" r="8" stroke="#399" fill="#3DD"></circle>
                         </g>
-                        <g id="activity">
+                        <g id="activity" class="process mouse-out" onmouseover="processMouseOver(this)" onmouseleave="processMouseOut(this)">
                             <rect x="0" y="0" width="40" height="40" rx="4" ry="4" stroke="#3A9" fill="#39D"></rect>
-                            <circle class="acher" cx="20" cy="0" r="8" stroke="#399" fill="#3DD"></circle>
-                            <circle class="acher" cx="40" cy="20" r="8" stroke="#399" fill="#3DD"></circle>
-                            <circle class="acher" cx="20" cy="40" r="8" stroke="#399" fill="#3DD"></circle>
-                            <circle class="acher" cx="0" cy="20" r="8" stroke="#399" fill="#3DD"></circle>
+                            <circle class="acher-hide" cx="20" cy="0" r="8" stroke="#399" fill="#3DD"></circle>
+                            <circle class="acher-hide" cx="40" cy="20" r="8" stroke="#399" fill="#3DD"></circle>
+                            <circle class="acher-hide" cx="20" cy="40" r="8" stroke="#399" fill="#3DD"></circle>
+                            <circle class="acher-hide" cx="0" cy="20" r="8" stroke="#399" fill="#3DD"></circle>
                         </g>
                     </defs>
                     <g>
@@ -63,6 +63,7 @@
         </div>
     </div>
     <footer class="banner">This is footer</footer>
+    <script src="script.js"></script>
 </body>
 
 </html>

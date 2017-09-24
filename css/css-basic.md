@@ -97,3 +97,16 @@ list-style
 [1.css-tricks](https://css-tricks.com/snippets/css/using-font-face/)
 
 [2.how to use web fonts](https://www.filamentgroup.com/lab/font-loading.html)
+
+
+## 渐变
+
+`linear-gradient(direction, <color stop>[, <color stop>])`
+
+* 14px * 14px背景网格:
+```css
+.target {
+  background-size: 14px 14px;
+  background-image: linear-gradient(to right, #efefef 1px, transparent 1px), linear-gradient(to bottom, #efefef 1px, transparent 1px);
+}
+```
